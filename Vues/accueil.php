@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -8,6 +10,7 @@
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
     <title>Ma Réponse</title>
+    
 
     <!-- Bootstrap core CSS -->
     <link href="Vues/assets/css/bootstrap.css" rel="stylesheet">
@@ -16,8 +19,8 @@
     <link href="Vues/assets/css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="Vues/assets/css/font-awesome.min.css">
 
-   <!--<script src="Vues/assets/js/jquery.min.js"></script>
-	<script src="Vues/assets/js/modernizr.custom.js"></script>-->
+   <script src="Vues/assets/js/jquery.min.js"></script>
+	<script src="Vues/assets/js/modernizr.custom.js"></script>
 	
 
 	
@@ -38,14 +41,14 @@
 		<div class="menu-wrap">
 			<h1 class="logo"><a href="index.html#home">Ma Réponse</a></h1>
 			<i class="icon-remove menu-close"></i>
-			<a href="#home" class="smoothScroll">Home</a>
+			<a href="#home" class="smoothScroll">Accueil</a>
 			<a href="#about" class="smoothScroll">Réponse</a>
 			<a href="#portfolio" class="smoothScroll">Portfolio</a>
 			<a href="#contact" class="smoothScroll">Contact</a>
-			<a href="#"><i class="icon-facebook"></i></a>
-			<a href="#"><i class="icon-twitter"></i></a>
-			<a href="#"><i class="icon-dribbble"></i></a>
-			<a href="#"><i class="icon-envelope"></i></a>
+			<a href="https://www.facebook.com/sebastien.de.beauffort"><i class="icon-facebook"></i></a>
+			<a href="https://twitter.com/SebdeBeauffort"><i class="icon-twitter"></i></a>
+			<a href="#"><i class="fa fa-github-square"></i></a>
+			
 		</div>
 		
 		<!-- Menu button -->
@@ -69,28 +72,56 @@
 					<div class="row col-lg-12 col-lg-offset-2">
 						<div class="form-group col-lg-2 ">
 							<label for="titre">Titre:</label>
-							<input type="text" class="form-control" id="titre"  name="titre">
-						</div>
-						<div class="form-group col-lg-2">
-							<label for="nom">Nom:</label>
-							<input type="text" class="form-control" id="nom"  name="nom">
+							<input type="text" class="form-control" id="titre"  name="titre" value="<?php echo $titre; ?>">
 						</div>
 						<div class="form-group col-lg-2">
 							<label for="prenom">Prénom:</label>
-							<input type="text" class="form-control" id="prenom" name="prenom">
+							<input type="text" class="form-control" id="prenom" name="prenom" value="<?php echo $prenom; ?>">
+						</div>
+						<div class="form-group col-lg-2">
+							<label for="nom">Nom:</label>
+							<input type="text" class="form-control" id="nom"  name="nom" value="<?php echo $nom; ?>">
 						</div>
 						<div class="form-group col-lg-2">
 							<label >Sexe</label><br/>
-							<label class="radio-inline"><input type="radio" name="sexe" value="H">H</label>
-							<label class="radio-inline"><input type="radio" name="sexe" value="F">F</label>
+							<?php
+								if ($sexe=="H")
+								{
+									?>
+										<label class="radio-inline"><input type="radio" name="sexe" value="H" id="sexeM" checked>H</label>
+										<label class="radio-inline"><input type="radio" name="sexe" value="F" id="sexeF">F</label>
+									<?php
+								}
+								elseif ($sexe=="F") 
+								{
+									?>
+										<label class="radio-inline"><input type="radio" name="sexe" value="H" id="sexeM">H</label>
+										<label class="radio-inline"><input type="radio" name="sexe" value="F" id="sexeF" checked>F</label>
+									<?php
+								}
+								else
+								{
+									?>
+										<label class="radio-inline"><input type="radio" name="sexe" value="H" id="sexeM">H</label>
+										<label class="radio-inline"><input type="radio" name="sexe" value="F" id="sexeF">F</label>
+									<?php
+								}
+
+							?>
+							
+							
 						</div>
 					</div>
-					<div class="row col-lg-8 col-lg-offset-2">
-						
-							<label >Présence à la soirée: </label>
-							<label class="radio-inline"><input type="radio" name="presence">oui</label>
-							<label class="radio-inline"><input type="radio" name="presence">non</label>
-						
+					<div class="row col-lg-12 col-lg-offset-4">
+						<div class="form-group col-lg-2">
+							<label for="date">Date:</label>
+							<input type="text" class="form-control" id="date" name="date">
+						</div>
+						<div class="form-group col-lg-2">
+							<label >Présence à la soirée: </label><br/>
+							<label class="radio-inline"><input type="radio" name="presence" value="oui" id="presenceOui">Oui</label>
+							<label class="radio-inline"><input type="radio" name="presence" value="non" id="presenceNon">Non</label>
+						</div>
 					</div>
 					<div class="row col-lg-12 col-lg-offset-2">
 						<div class="form-group col-lg-8 ">
@@ -99,7 +130,9 @@
 						</div>
 					</div>
 					<div class="row">
-						<input type="button" class="btn btn-lg" value="Créer ma réponse" onclick="creerReponse()"/>
+						<a href="#about" class="smoothScroll">
+							<input type="button" class="btn btn-lg" value="Créer ma réponse" onClick="creerReponse()"/>
+						</a>
 					</div>
 				</form>
 				<br>
@@ -128,8 +161,17 @@
 					<p>I'm available for freelance jobs. Contact me now.</p>
 					<p><button type="button" class="btn btn-warning">I HAVE A FREELANCE JOB</button></p>
 				</div>			 -->
-				<div class="col-lg-6 col-lg-offset-3" id="reponse">
-				</div>					
+				<div class="col-lg-6 col-lg-offset-3">
+					<p  id="reponse">
+
+					</p>
+				</div>
+				<div class="col-lg-6 col-lg-offset-3">
+					<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+					<p>
+						Si vous constater un beug, merci de le rapporter à sewelseb@hotmail.com
+					</p>
+				</div>				
 			</div>
 		</div><!-- /container -->
 	</div><!-- /f -->
@@ -148,15 +190,19 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="item active centered">
+								<a href="https://www.qwerteach.com"><input type="button" class="btn btn-lg" value="Qwerteach.com" /></a>
 								<img class="img-responsive" src="Vues/assets/img/c1.png" alt="">
 							</div>
 							<div class="item centered">
+								<a href="#contact" class="smoothScroll"><input type="button" class="btn btn-lg" value="Site de réponse aux soirées (demandez le votre)" /></a>
 								<img class="img-responsive" src="Vues/assets/img/c2.png" alt="">
 							</div>
 							<div class="item centered">
+								<a href="http://hanoi.co.nf/index.php"><input type="button" class="btn btn-lg" value="Le jeu des Tours d'Hanoï" /></a>
 								<img class="img-responsive" src="Vues/assets/img/c3.png" alt="">
 							</div>
 						</div>
+						<br>
 						<br>
 						<br>
 						<ol class="carousel-indicators">
@@ -179,9 +225,11 @@
 				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
 				
 				<div class="col-lg-6 col-lg-offset-3">
-					<p>Some Avenue, 987<br/>Madrid, Spain<br/>+34 8984-4343</p>
-					<p>iam@awesomemail.com</p>
-					<p><button type="button" class="btn btn-warning">YEAH! CONTACT ME NOW!</button></p>
+					<img src="Vues/images/seb.png" style="max-height:200px;"> 
+					<p>Sébastien de Beauffort</p>
+					<p>Rue Louis Hap, 64<br/>1040 Bruxelles<br/>tel: +32/470.35.74.35</p>
+					<p>sewelseb@hotmail.com</p>
+					
 				</div>
 			</div>
 		</div>
@@ -193,9 +241,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="Vues/JS/javaScript.js"></script>
-	<!--<script src="Vues/assets/js/classie.js"></script>
+	<script src="Vues/assets/js/classie.js"></script>
     <script src="Vues/assets/js/bootstrap.min.js"></script>
     <script src="Vues/assets/js/smoothscroll.js"></script>
-	<script src="Vues/assets/js/main.js"></script>-->
+	<script src="Vues/assets/js/main.js"></script>
 </body>
 </html>

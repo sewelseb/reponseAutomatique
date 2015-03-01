@@ -1,5 +1,5 @@
  <?php
-  try
+ /* try
     {
       //mysql_connect('localhost', 'root', 'genevieve');
       //mysql_select_db('iteachyou');
@@ -14,5 +14,5 @@
   catch (Exception $e)
     {
       die ('Erreur: '.$e->getMessage());
-    }
+    }*/
  ?>
