@@ -49,7 +49,7 @@
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">Ma Réponse</a></h1>
+			<h1 class="logo"><a href="index.php">Ma Réponse</a></h1>
 			<i class="icon-remove menu-close"></i>
 			<a href="#home" class="smoothScroll">Accueil</a>
 			<a href="#about" class="smoothScroll">Réponse</a>
@@ -159,9 +159,9 @@
 	<section id="about" name="about"></section>
 	<div id="f">
 		<div class="container">
-			<div class="row">
+			<div class="row" style="background-color: transparent;">
 				<h3>Ma Réponse</h3>
-				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+				<p class="centered" ><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
 				
 				<!-- INTRO INFORMATIO-->
 				<!-- <div class="col-lg-6 col-lg-offset-3">
@@ -179,7 +179,7 @@
 				<div class="col-lg-6 col-lg-offset-3">
 					<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
 					<p>
-						Si vous constater un beug, merci de le rapporter à sewelseb@hotmail.com
+						Si vous constatez un beug, merci de le rapporter à sewelseb@hotmail.com
 					</p>
 				</div>				
 			</div>
@@ -255,5 +255,7 @@
     <script src="Vues/assets/js/bootstrap.min.js"></script>
     <script src="Vues/assets/js/smoothscroll.js"></script>
 	<script src="Vues/assets/js/main.js"></script>
+	<script src="Vues/JS/zeroclipboard-1.3.5/zeroclipboard-2.2.0/dist/ZeroClipboard.js"></script>
+	
 </body>
 </html>

@@ -100,12 +100,27 @@ function creerReponse()
 
 		//document.getElementById('reponse').InnerHTML=reponse;
 		document.getElementById("reponse").innerHTML=reponse;
+
+		
+
+
+		// var client = new ZeroClipboard( reponse, {
+		// 				moviePath: "Vues/JS/zeroclipboard-1.3.5/zeroclipboard-2.2.0/dist/ZeroClipboard.swf"
+		// 			} );
+		// clip.on( 'noflash', function ( client, args ) {
+		//     $("#copy").click(function(){            
+		//         var txt = $(this).attr('data-clipboard-text');
+		//         prompt ("Copy link, then click OK.", txt);
+		//     });
+		// });  
 		ajouterCookies(titre, nom, prenom, sexe);
+
 
 		//mise en place des cookies pour la prochaine conexion:
 		//mettreEnPlaceLesCookies(titre, nom, prenom, sexe);
 
 	}
+
 function getXMLHttpRequest()
   {
 	  var xhr = null;
